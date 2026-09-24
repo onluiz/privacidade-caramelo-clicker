@@ -18,12 +18,12 @@
 </head>
 <body>
   <h1>Política de Privacidade</h1>
-  <p class="update">Última atualização: 23/09/2026</p>
+  <p class="update">Última atualização: 24/09/2026</p>
 
   <p>Esta política descreve como o aplicativo <strong>Cachorro Caramelo Runner</strong> lida com informações do usuário. Desenvolvemos este app com foco em simplicidade e respeito à sua privacidade.</p>
 
   <div class="alert">
-    <strong>✅ Resumo:</strong> O Cachorro Caramelo Runner <strong>não coleta dados pessoais</strong> como nome, e-mail, telefone, contatos, fotos ou localização precisa. Utilizamos o <strong>Google Analytics for Firebase</strong> para coletar estatísticas de uso de forma anônima, com o objetivo de melhorar o jogo, e o <strong>Google AdMob</strong> para exibir <strong>anúncios em vídeo opcionais</strong> (você escolhe assistir em troca de uma recompensa no jogo). O AdMob pode usar o <strong>Identificador de Publicidade</strong> do seu dispositivo. <strong>Não há compras com dinheiro real.</strong>
+    <strong>✅ Resumo:</strong> O Cachorro Caramelo Runner <strong>não coleta dados pessoais</strong> como nome, e-mail, telefone, contatos, fotos ou localização precisa. Utilizamos o <strong>Google Analytics for Firebase</strong> para coletar estatísticas de uso de forma anônima, o <strong>Firebase Crashlytics</strong> para receber relatórios de falhas, o <strong>Firebase (Authentication e Firestore)</strong> para guardar o seu progresso na nuvem quando você entra com o Google Play Games, e o <strong>Google AdMob</strong> para exibir <strong>anúncios em vídeo opcionais</strong> (você escolhe assistir em troca de uma recompensa no jogo). O AdMob pode usar o <strong>Identificador de Publicidade</strong> do seu dispositivo. <strong>Não há compras com dinheiro real.</strong>
   </div>
 
   <h2>1. Dados que coletamos</h2>
@@ -33,26 +33,29 @@
     <li><strong>Interações no app</strong>: eventos de jogabilidade como início, conclusão, falha e repetição de fases, compras com a moeda virtual do jogo e uso de itens.</li>
     <li><strong>Informações técnicas do dispositivo</strong>: modelo do aparelho, versão do sistema operacional e dados de sessão, fornecidos automaticamente pelo Firebase.</li>
   </ul>
+  <p>Para identificar e corrigir erros, usamos o <strong>Firebase Crashlytics</strong>, que coleta automaticamente <strong>relatórios de falhas e diagnósticos</strong>: registro do erro, estado do app no momento da falha, modelo do aparelho, versão do sistema operacional e um identificador de instalação gerado pelo Crashlytics.</p>
+  <p>Se o login com o Google Play Games estiver disponível no seu aparelho, também guardamos o seu <strong>progresso no jogo</strong> (moedas, fase, itens, skins e configurações) em um <strong>save na nuvem</strong>, associado a um <strong>identificador de usuário do Firebase</strong> gerado a partir da sua conta do Play Games, conforme a seção 6.</p>
   <p>Quando você opta por assistir a um anúncio em vídeo, o <strong>Google AdMob</strong> também pode coletar o <strong>Identificador de Publicidade (Advertising ID)</strong>, o endereço IP, informações técnicas do dispositivo e dados sobre a interação com o anúncio (exibição, cliques e conclusão), conforme descrito na seção 7.</p>
 
   <h2>2. O que NÃO coletamos</h2>
   <ul>
     <li>Não coletamos nome, e-mail, telefone, contatos, fotos nem localização precisa.</li>
     <li>Nós, desenvolvedores, não recebemos nem armazenamos o <strong>Identificador de Publicidade (Advertising ID)</strong>; ele é acessado diretamente pelo SDK do Google AdMob para exibir e medir anúncios.</li>
-    <li>Não criamos contas de usuário. O login é opcional e feito pela sua conta Google, conforme a seção sobre Google Play Games abaixo.</li>
+    <li>Não criamos contas próprias com e-mail e senha, e não pedimos seu nome nem seu e-mail. O login é feito automaticamente pela sua conta do Google Play Games, quando disponível, conforme a seção 6.</li>
   </ul>
 
   <h2>3. Compras no aplicativo</h2>
   <p>O Cachorro Caramelo Runner <strong>não possui microtransações nem compras com dinheiro real</strong>. A lojinha dentro do jogo utiliza exclusivamente a <strong>moeda virtual obtida jogando</strong>, sem qualquer cobrança financeira ou processamento de pagamentos.</p>
 
   <h2>4. Como usamos e protegemos os dados</h2>
-  <p>Os dados do Firebase são usados exclusivamente para <strong>análise e melhoria do jogo</strong> (entender quais fases são mais difíceis, balancear a dificuldade e corrigir problemas). Os dados de anúncios são usados pelo Google AdMob para exibir e medir anúncios (seção 7). A transmissão ao Google ocorre de forma criptografada (TLS/HTTPS).</p>
+  <p>Os dados do Firebase Analytics e do Crashlytics são usados exclusivamente para <strong>análise e melhoria do jogo</strong> (entender quais fases são mais difíceis, balancear a dificuldade e corrigir falhas). O save na nuvem é usado apenas para <strong>guardar e restaurar o seu progresso</strong>, por exemplo ao trocar de aparelho. Os dados de anúncios são usados pelo Google AdMob para exibir e medir anúncios (seção 7). A transmissão ao Google ocorre de forma criptografada (TLS/HTTPS).</p>
 
   <h2>5. Permissões do Dispositivo</h2>
   <p>Permissões como vibração e armazenamento local (para salvar o progresso) são usadas exclusivamente para melhorar a experiência dentro do próprio dispositivo e não estão vinculadas à coleta de dados pessoais.</p>
 
-  <h2>6. Google Play Games Services</h2>
-  <p>O jogo integra o <strong>Google Play Games Services</strong> para placares (leaderboards) de pontuação. O login é <strong>opcional</strong> e feito com a sua conta Google existente — não criamos contas. Ao usar esse recurso, sua pontuação é enviada ao Google e pode aparecer em um placar público associado ao seu perfil do Play Games. O app não armazena seu identificador ou nome de jogador em servidores próprios. Esses dados são tratados pelo Google conforme a <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade do Google</a>.</p>
+  <h2>6. Google Play Games Services e save na nuvem</h2>
+  <p>O jogo integra o <strong>Google Play Games Services</strong> para login e, quando habilitado, para placares (leaderboards) de pontuação. O login usa a sua conta Google existente, sem que criemos uma conta própria. Ao usar placares, sua pontuação é enviada ao Google e pode aparecer em um placar público associado ao seu perfil do Play Games.</p>
+  <p>Com o login, o <strong>Firebase Authentication</strong> gera um <strong>identificador de usuário</strong> e o <strong>Cloud Firestore</strong> guarda o seu save (progresso do jogo) associado a esse identificador. Não armazenamos seu nome, e-mail ou foto. Se o login não estiver disponível, o jogo continua funcionando normalmente com o save apenas no seu aparelho. Esses dados são tratados pelo Google conforme a <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade do Google</a>.</p>
 
   <h2>7. Anúncios (Google AdMob)</h2>
   <p>O jogo exibe <strong>anúncios em vídeo recompensados</strong> por meio do <strong>Google AdMob</strong>. Esses anúncios são sempre <strong>opcionais</strong>: só aparecem quando você toca em um botão para assisti-los em troca de uma recompensa, como desbloquear uma habilidade da loja. Não exibimos anúncios sem que você peça.</p>
@@ -64,19 +67,20 @@
   <p>O tratamento desses dados pelo Google é regido pela <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade do Google</a> e por <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">como o Google usa dados de sites e apps parceiros</a>.</p>
 
   <h2>8. Compartilhamento com Terceiros</h2>
-  <p>Não vendemos dados pessoais. Os dados de análise são processados pelo <strong>Google (Firebase)</strong> como nosso provedor de análise, conforme a <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade do Google</a> e a <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Política de Privacidade do Firebase</a>. Os dados de anúncios são compartilhados com o <strong>Google (AdMob)</strong>, que os utiliza para exibir e medir anúncios, conforme descrito na seção 7.</p>
+  <p>Não vendemos dados pessoais. Os dados de análise, de falhas, de autenticação e do save na nuvem são processados pelo <strong>Google (Firebase)</strong> como nosso provedor de serviços, conforme a <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade do Google</a> e a <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Política de Privacidade do Firebase</a>. Os dados de anúncios são compartilhados com o <strong>Google (AdMob)</strong>, que os utiliza para exibir e medir anúncios, conforme descrito na seção 7.</p>
 
   <h2>9. Público-alvo</h2>
   <p>O Cachorro Caramelo Runner é destinado a usuários com <strong>13 anos ou mais</strong>. Não direcionamos o aplicativo a crianças e não coletamos intencionalmente dados de menores de idade.</p>
 
   <h2 id="exclusao">10. Exclusão de dados e direitos do usuário (LGPD)</h2>
-  <p>Em conformidade com a Lei Geral de Proteção de Dados (LGPD), você pode solicitar a exclusão dos seus dados referentes ao aplicativo <strong>Cachorro Caramelo Runner</strong> seguindo estes passos:</p>
+  <p>Em conformidade com a Lei Geral de Proteção de Dados (LGPD), você pode excluir os seus dados referentes ao aplicativo <strong>Cachorro Caramelo Runner</strong> diretamente pelo jogo, seguindo estes passos:</p>
   <ul>
-    <li><strong>Passo 1:</strong> envie um e-mail para <a href="mailto:dev.caramelostudio@gmail.com">dev.caramelostudio@gmail.com</a> com o assunto "Exclusão de dados".</li>
-    <li><strong>Passo 2:</strong> processaremos a solicitação e excluiremos os dados de análise associados em até 30 dias.</li>
+    <li><strong>Passo 1:</strong> abra o jogo e vá em <em>Configurações</em>.</li>
+    <li><strong>Passo 2:</strong> toque em <strong>EXCLUIR CONTA</strong> e confirme. A exclusão é feita na hora e é necessário estar conectado à internet.</li>
   </ul>
-  <p><strong>Dados excluídos:</strong> dados de uso e análise (identificador da instância do app e interações no app) coletados via Firebase Analytics. <strong>Dados mantidos:</strong> nenhum dado pessoal é retido por nós, pois não armazenamos dados em servidores próprios.</p>
-  <p>Você também pode redefinir o identificador de análise a qualquer momento reinstalando o aplicativo. Os dados de anúncios tratados pelo Google AdMob são controlados nas configurações de anúncios da sua conta Google e do Android (seção 7). Para excluir dados de placar (leaderboards), gerencie sua conta diretamente no aplicativo Google Play Games.</p>
+  <p><strong>Dados excluídos:</strong> o save na nuvem (progresso do jogo) e o identificador de usuário do Firebase associado ao seu Google Play Games. O progresso salvo no aparelho também é reiniciado. Depois da exclusão, se você entrar de novo, uma conta nova e vazia será criada.</p>
+  <p><strong>Dados mantidos:</strong> nenhum dado pessoal identificável (como nome ou e-mail) é retido por nós. Os dados de uso e análise do Firebase Analytics e os relatórios de falhas do Crashlytics são pseudônimos, não ficam vinculados ao seu identificador de usuário e são mantidos pelos prazos de retenção padrão do Google. Você pode redefinir os identificadores de análise e de falhas a qualquer momento reinstalando o aplicativo.</p>
+  <p>Os dados de anúncios tratados pelo Google AdMob são controlados nas configurações de anúncios da sua conta Google e do Android (seção 7). Para excluir dados de placar (leaderboards), gerencie sua conta diretamente no aplicativo Google Play Games. Se tiver qualquer problema para excluir os dados pelo jogo, escreva para <a href="mailto:dev.caramelostudio@gmail.com">dev.caramelostudio@gmail.com</a>.</p>
 
   <h2>11. Alterações nesta Política</h2>
   <p>Podemos atualizar esta política caso o funcionamento do app mude. A data da última revisão será sempre indicada no topo. Recomendamos consultar esta página periodicamente.</p>
